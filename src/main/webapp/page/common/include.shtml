@@ -1,0 +1,6 @@
+		<!-- 项目的context-path -->
+		<base href= '/ssi/' />
+		<!--#set var="version" value="1.0.0.0"--> 
+		<!-- 只允许添加公共使用的css和js -->
+		<link href="css/main.css?version=<!--#echo var='version'-->" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.min.js?version=<!--#echo var='version'-->" type="text/javascript" ></script>

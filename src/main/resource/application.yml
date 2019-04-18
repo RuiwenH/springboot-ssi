@@ -1,0 +1,7 @@
+server:
+  context-path: /ssi
+  port: 8082
+
+spring:
+  resources:
+    static-locations: classpath:/static/

@@ -1,0 +1,7 @@
+<div id="header">
+    <ul class="header-link">
+    <li><a href="page/index.shtml">首页</a></li>
+    <li><a href="page/user/user_info.shtml">用户</a></li>
+    <li><a>帮助</a></li>
+    </ul>
+</div>

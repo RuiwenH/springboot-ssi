@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>用户列表</title>
+<!--#include virtual="../common/include.shtml"  -->
+</head>
+<body class="graybg">
+    <!--#include virtual="../common/header.shtml"  -->
+    <div class="main_container clearfix" id="main_container">
+         分模块页
+    </div>
+    <!--#include virtual="../common/footer.shtml"  -->
+</body>
+</html>

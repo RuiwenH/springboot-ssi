@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>springboot-ssi</title>
+<!--#include virtual="./common/include.shtml"  -->
+</head>
+<body>
+	<!--#include virtual="./common/header.shtml"  -->
+	<div class="main_container clearfix" id="main_container">
+	   <div style="text-align: left;">
+		<strong>SSI有什么用?<br>
+		</strong> 目前，主要有以下几种用用途：<br> 1、显示服务器端环境变量&lt;#echo&gt;<br>
+		2、将文本内容直接插入到文档中&lt;#include&gt;<br>
+		3、显示WEB文档相关信息&lt;#flastmod&nbsp;#fsize&gt;&nbsp;(如文件制作日期/大小等)<br>
+		4、直接执行服务器上的各种程序&lt;#exec&gt;(如CGI或其他可执行程序)<br>
+		5、设置SSI信息显示格式&lt;#config&gt;(如文件制作日期/大小显示方式)<br>
+		高级SSI&lt;XSSI&gt;可设置变量使用if条件语句。<br> <br>
+		<b>使用SSI</b><br> SSI是为WEB服务器提供的一套命令，这些命令只要直接嵌入到HTML文档的注释内容之中即可。如：<br>
+		&lt;!--#include&nbsp;file="info.htm"--&gt;<br>
+		就是一条SSI指令，其作用是将"info.htm"的内容拷贝到当前的页面中，当访问者来浏览时，会看到其它HTML文档一样显示info.htm其中的内容。<br>
+		其它的SSI指令使用形式基本同刚才的举例差不多，可见SSI使用只是插入一点代码而已，使用形式非常简单。<br>
+		当然，如果WEB服务器不支持SSI，它就会只不过将它当作注释信息，直接跳过其中的内容；浏览器也会忽略这些信息。<br> <br>
+		<b>如何在我的WEB服务器上配置SSI功能？</b><br>
+		在一些WEB服务器上（如IIS&nbsp;4.0/SAMBAR&nbsp;4.2），包含&nbsp;#include&nbsp;指令的文件必须使用已被映射到&nbsp;SSI&nbsp;解释程序的扩展名；否则，Web&nbsp;服务器将不会处理该SSI指令；默认情况下，扩展名&nbsp;.stm、.shtm&nbsp;和&nbsp;.shtml&nbsp;被映射到解释程序（Ssinc.dll）。<br>
+		Apache则是根据你的设置情况而定，修改srm.conf如：<br>
+		AddType&nbsp;text/x-server-parsed-html&nbsp;.shtml&nbsp;将只对.shtml扩展名的文件解析SSI指令<br>
+		AddType&nbsp;text/x-server-parsed-html&nbsp;.html将对所有HTML文档解析SSI指令<br>
+		Netscape&nbsp;WEB服务器直接使用Administration&nbsp;Server(管理服务器)可打开SSI功能。<br>
+		Website使用Server&nbsp;Admin程序中的Mapping标签，扩展名添加内容类型为：wwwserver/html-ssi<br>
+		Cern服务器不支持SSI，可用SSI诈骗法，到<a class="ubblink"
+			href="http://sw.cse.bris.ac.uk/WebTools/fakessi.html" rel="nofollow"
+			target="_blank"><font color="#336666">http://sw.cse.bris.ac.uk/WebTools/fakessi.html</font></a>
+		&nbsp;上下载一个PERL脚本，即可使你的CERN服务器使用一些SSI指令。（不支持exec指令。）
+		</div>
+	</div>
+	<!--#include virtual="./common/footer.shtml"  -->
+</body>
+</html>
